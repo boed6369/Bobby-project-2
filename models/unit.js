@@ -11,6 +11,7 @@ const unitSchema = new mongoose.Schema({
     leadership: { type: String, require: true},
     saveCharacteristic: { type: String, require: true},
     abilities: { type: String, require: true},
+    unitImage: { type: String, require: true},
 
     weaponName: { type: String, require: true},
     range: { type: String, require: true},
@@ -19,6 +20,7 @@ const unitSchema = new mongoose.Schema({
     ap: { type: String, require: true},
     damage: { type: String, require: true},
     weaponAbilites : { type: String, require: true},
+    weaponImage: { type: String, require: true},
 })
 
 const unit = mongoose.model('unit', unitSchema)
