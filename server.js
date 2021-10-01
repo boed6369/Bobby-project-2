@@ -1,16 +1,18 @@
 require('dotenv').config()
 
+const { render } = require('ejs');
+const { request, response } = require('express');
 //___________________
 //Dependencies
 //___________________
 const express = require('express');
 const methodOverride = require('method-override');
 const mongoose = require ('mongoose');
+const unit = require('./models/unit');
 const app = express();
 const db = mongoose.connection;
-//___________________
-//Port
-//___________________
+const units = require('./models/unit.js')
+//____________________
 // Allow use of Heroku's port or your own local port, depending on the environment
 const PORT = process.env.PORT || 3000;
 
@@ -28,13 +30,11 @@ mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true
 
 // Error / success
 db.on('error', (err) => console.log(err.message + ' is mongod not running?'));
-db.on('connected', () => console.log('mongod connected: '));
+db.on('connected', () => console.log('mongod connected '));
 db.on('disconnected', () => console.log('mongod disconnected'));
 
 //___________________
 //Middleware
-//___________________
-
 //use public folder for static assets
 app.use(express.static('public'));
 
@@ -48,11 +48,35 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 //___________________
 // Routes
-//___________________
+//index
+app.get('/unit', (request, response) => {
+  units.find({}, (error, allUnits) =>
+  response.render('index.ejs', {
+    unit:allUnits
+  }))
+})
+// new
+app.get('/unit/new', (request,response) => {
+  response.render('new.ejs')
+})
+// delete
+
+// update
+
+// create
+app.post('/unit', (request,response) => {
+  units.create(request.body, (error,createdUnit) => {
+    response.send(createdUnit)
+  })
+  // response.send(request.body)
+})
+// edit
+
+// 
 //localhost:3000
-app.get('/' , (req, res) => {
-  res.send('Hello World!');
-});
+// app.get('/' , (req, res) => {
+//   res.send('Hello World!');
+// });
 
 //___________________
 //Listener
