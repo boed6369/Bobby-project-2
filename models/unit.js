@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const unitSchema = new mongoose.Schema({
     name: { type: String, required: true},
-    movment: { type: String, require: true},
+    movement: { type: String, require: true},
     weaponSkill: {type: String, require: true},
     ballisticSkill: { type: String, require: true},
     strength: { type: String, require: true},
