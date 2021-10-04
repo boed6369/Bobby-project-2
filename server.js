@@ -63,10 +63,10 @@ app.get('/unit/new', (request, response) => {
 
 // update
 app.put('/unit/:id', (request,response) => {
-  unit.findByIdAndUpdate(request.params.id, request.body, {
+  units.findByIdAndUpdate(request.params.id, request.body, {
     new:true 
   }, (error, updatedUnit) => {
-    response.redirect(`/unit/${request.parmas.id}`)
+    response.redirect(`/unit`)
   })
 })
 
@@ -79,7 +79,7 @@ app.post('/unit', (request, response) => {
 })
 // edit
 app.get('/unit/:id/edit', (request,response) => {
-  unit.findById(request.params.id, (error,foundUnit) => {
+  units.findById(request.params.id, (error,foundUnit) => {
     response.render('edit.ejs', { 
       unit:foundUnit
     })
@@ -88,7 +88,7 @@ app.get('/unit/:id/edit', (request,response) => {
 })
 // show
 app.get('/unit/:id', (request, response) => {
-	unit.findById(request.params.id, (err, foundUnit) => {
+	units.findById(request.params.id, (err, foundUnit) => {
 		response.render('show.ejs', {
 			unit: foundUnit,
 		});
