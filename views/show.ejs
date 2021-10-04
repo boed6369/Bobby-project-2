@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>
+        <%=unit.name%>
+    </h1>
+    <fieldset>
+        <tr>
+            <td><%=unit.weaponSkill%></td>
+            <td><%=unit.ballisticSkill%></td>
+            <td><%=unit.strength%></td>
+            <td><%=unit.toughness%></td>
+            <td><%=unit.attack%></td>
+            <td><%=unit.leadership%></td>
+            <td><%=unit.saveCharacteristic%></td>
+  
+        </tr>
+        </fieldset>
+        <img src=<%=unit.unitImage%>
+        <h1>Unit Abilites</h1>
+        <p><%=unit.abilities%></p>
+    
+    <fieldset>
+        <tr>
+            <td><%=unit.weaponName%></td>
+            <td><%=unit.range%></td>
+            <td><%=unit.type%></td>
+            <td><%=unit.weaponStrength%></td>
+            <td><%=unit.ap%></td>
+            <td><%=unit.damage%></td>
+
+        </tr>
+            </fieldset>
+            <img src=<%=unit.weaponImage%>
+            <h1>Weapon Abilities</h1>
+            <p><%=unit.weaponAbilites%></p>
+     
+
+</body>
+
+</html>

@@ -7,7 +7,7 @@ const { request, response } = require('express');
 //___________________
 const express = require('express');
 const methodOverride = require('method-override');
-const mongoose = require ('mongoose');
+const mongoose = require('mongoose');
 const unit = require('./models/unit');
 const app = express();
 const db = mongoose.connection;
@@ -25,7 +25,7 @@ const MONGODB_URI = process.env.DATABASE_URL;
 // Connect to Mongo &
 // Fix Depreciation Warnings from Mongoose
 // May or may not need these depending on your Mongoose version
-mongoose.connect(MONGODB_URI , { useNewUrlParser: true, useUnifiedTopology: true }
+mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
 // Error / success
@@ -51,26 +51,50 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //index
 app.get('/unit', (request, response) => {
   units.find({}, (error, allUnits) =>
-  response.render('index.ejs', {
-    unit:allUnits
-  }))
+    response.render('index.ejs', {
+      unit: allUnits
+    }))
 })
 // new
-app.get('/unit/new', (request,response) => {
+app.get('/unit/new', (request, response) => {
   response.render('new.ejs')
 })
 // delete
 
 // update
+app.put('/unit/:id', (request,response) => {
+  unit.findByIdAndUpdate(request.params.id, request.body, {
+    new:true 
+  }, (error, updatedUnit) => {
+    response.redirect(`/unit/${request.parmas.id}`)
+  })
+})
 
 // create
-app.post('/unit', (request,response) => {
-  units.create(request.body, (error,createdUnit) => {
-    response.send(createdUnit)
+app.post('/unit', (request, response) => {
+  units.create(request.body, (error, createdUnit) => {
+    response.redirect('/unit')
   })
-  // response.send(request.body)
+
 })
 // edit
+app.get('/unit/:id/edit', (request,response) => {
+  unit.findById(request.params.id, (error,foundUnit) => {
+    response.render('edit.ejs', { 
+      unit:foundUnit
+    })
+  })
+
+})
+// show
+app.get('/unit/:id', (request, response) => {
+	unit.findById(request.params.id, (err, foundUnit) => {
+		response.render('show.ejs', {
+			unit: foundUnit,
+		});
+	});
+});
+
 
 // 
 //localhost:3000

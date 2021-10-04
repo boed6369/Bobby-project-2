@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1> Unit Selection</h1>
+    <a href="/unit/new">New Entry</a>
     <ul>
         <% unit.forEach((units)=> { %>
+            <li>
             <%=units.name%>
-            <img src=<%=units.unitImage%> />
+            <a href="/unit/<%=units._id%>"><img src=<%=units.unitImage%> /></a>
+            </li>
+            <a href="/unit/<%=units._id%>/edit">Edit</a>
             <% }) %>
     </ul>
 </body>
+
 </html>
