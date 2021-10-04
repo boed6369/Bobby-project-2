@@ -60,7 +60,11 @@ app.get('/unit/new', (request, response) => {
   response.render('new.ejs')
 })
 // delete
-
+app.delete('/unit/:id', (request, response) => {
+  units.findByIdAndRemove(request.params.id, (error, foundUnit) => {
+      response.redirect('/unit');
+  });
+});
 // update
 app.put('/unit/:id', (request,response) => {
   units.findByIdAndUpdate(request.params.id, request.body, {
