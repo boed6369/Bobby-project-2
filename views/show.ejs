@@ -8,23 +8,34 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <style>
+        h1,h2{
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
     <h1>
-        <%=unit.name%>
+        Unit Info
     </h1>
-        <tr>
-            <th>Movement</th>
-            <th>WS</th>
-            <th>BS</th>
-            <th>S</th>
-            <th>T</th>
-            <th>A</th>
-            <th>L</th>
-            <th>Save</th>
-        </tr><br>
-        <tr>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Unit</th>
+                    <th scope="col">M</th>
+                    <th scope="col">WS</th>
+                    <th scope="col">BS</th>
+                    <th scope="col">S</th>
+                    <th scope="col">T</th>
+                    <th scope="col">A</th>
+                    <th scope="col">L</th>
+                    <th scope="col">S</th>
+                </tr><br>
+            </thead>
+        <tbody>
+            <tr></tr>
+            <th scope='row'><%=unit.name%></th>
             <td><%=unit.movement%></td>
             <td><%=unit.weaponSkill%></td>
             <td><%=unit.ballisticSkill%></td>
@@ -34,17 +45,29 @@
             <td><%=unit.leadership%></td>
             <td><%=unit.saveCharacteristic%></td>
             
-        </tr><br>
-        
-        <img src=<%=unit.unitImage%><br>
-        <h1>Unit Abilites</h1>
-        <p><%=unit.abilities%></p>
+            </tr><br>
+        </tbody>
+        </table>
+        <div>
+        <img class="round mx-auto d-block" src=<%=unit.unitImage%><br>
+        </div>
+        <h2>Unit Abilites</h2>
+        <p><%=unit.abilities%></p><br>
 
-        <fieldset>
-            <legend>Weapons</legend>
+        
+           <h1>Weapons</h1>
+         <table class="table">
+             <thead class="thead-dark">
+                 <th scope="col">Weapon Name</th>
+                 <th scope="col">Range</th>
+                 <th scope="col">Type</th>
+                 <th scope="col">S</th>
+                 <th scope="col">AP</th>
+                 <th scope="col">D</th>
+             </thead>
+          
         <tr>
-           <h1> <%=unit.weaponName%></h1>
-            
+            <td><%=unit.weaponName%></td>
             <td><%=unit.range%></td>
             <td><%=unit.type%></td>
             <td><%=unit.weaponStrength%></td>
@@ -52,11 +75,13 @@
             <td><%=unit.damage%></td>
             
         </tr><br>
-            
-            <img src=<%=unit.weaponImage%> <br>
+        </table>     
+        <div>
+            <img class="round mx-auto d-block" src=<%=unit.weaponImage%> <br>
+        </div>
             <h1>Weapon Abilities</h1>
             <p><%=unit.weaponAbilites%></p>
-        </fieldset>
+        
 </body>
 
 </html>
