@@ -61,6 +61,9 @@ app.get('/unit/seed', (request, response) => {
 
 
 //index
+app.get('/', (request,response) => {
+  response.redirect('/unit')
+})
 app.get('/unit', (request, response) => {
   units.find({}, (error, allUnits) =>
     response.render('index.ejs', {
