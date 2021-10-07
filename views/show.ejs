@@ -16,6 +16,28 @@
             max-width: 50%;
             max-height: 400px;
         }
+        .edit {
+            font-size: 20px;
+            text-decoration: none;
+            transition: ease-in-out;
+            color:black;
+            margin-top: 5%;
+            
+        }
+        .edit:hover{
+            color:darkgray;
+        }
+        .index{
+            margin-left: 90%;
+            font-size: 20px;
+            position:absolute;
+            text-decoration: none;
+            color:black;
+            transition: ease-in-out;
+        }
+        .index:hover{
+            color:darkgray;
+        }
     </style>
 </head>
 
@@ -23,6 +45,8 @@
     <h1>
         Unit Info
     </h1>
+    <a class="edit" href="/unit/<%=unit._id%>/edit">Edit</a>
+    <a class="index" href='/unit'>Unit Selection</a><br>
         <table class="table">
             <thead class="thead-dark">
                 <tr>
@@ -86,8 +110,7 @@
             <img class="round mx-auto d-block" src=<%=unit.weaponImage%> <br>
         </div>
             <h1>Weapon Abilities</h1>
-            <p><%=unit.weaponAbilites%></p>
-        <a href='/unit'>Back to Unit Selection</a>
+            <p><%=unit.weaponAbilites%></p><br>
 </body>
 
 </html>
