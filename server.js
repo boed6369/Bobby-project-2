@@ -12,6 +12,7 @@ const unit = require('./models/unit');
 const app = express();
 const db = mongoose.connection;
 const units = require('./models/unit.js')
+const unitSeed = require( './models/unitSeed.js')
 //____________________
 // Allow use of Heroku's port or your own local port, depending on the environment
 const PORT = process.env.PORT || 3000;
@@ -48,6 +49,17 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 
 //___________________
 // Routes
+// Seeded
+app.get('/unit/seed', (request, response) => {
+	unit.deleteMany({}, (error, allUnits) => {});
+
+	unit.create(unitSeed, (error, data) => {
+		response.redirect('/unit');
+	});
+});
+
+
+
 //index
 app.get('/unit', (request, response) => {
   units.find({}, (error, allUnits) =>

@@ -5,6 +5,14 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Book List</title>
+        <style>
+            img {
+                max-width: 100%;
+            }
+            input {
+                margin: 10px 0
+            }
+        </style>
 	</head>
 	<body>
 		<h1>Unit Entry</h1>
@@ -12,26 +20,151 @@
             <form action="/unit/<%=unit._id%>?_method=PUT" method="POST">
 			Unit name: <input type="text" name="name" /><br />
             Movement: <input type="text" name="movement" /><br />
-            WS: <input type="text" name="weaponSkill" /><br />
-            BS: <input type="text" name="ballisticSkill" /><br />
-            S: <input type="text" name="strength" /><br />
-            T: <input type="text" name="toughness" /><br />
-            W: <input type="text" name="wounds" /><br />
-            A: <input type="text" name="attack" /><br />
-            L: <input type="text" name="leadership" /><br />
-            Save: <input type="text" name="saveCharacteristic" /><br />
-            Unit Abilities: <input type="text" name="abilites" /><br />
+            WS: <input list="ws" type="text" name="weaponSkill" /><br />
+                    <datalist id="ws">
+                        <option value="2+">
+                        <option value="3+">
+                        <option value="4+">
+                        <option value="5+">
+                        <option value="6+">
+                    </datalist>
+            BS: <input list="bs"type="text" name="ballisticSkill" /><br />
+                    <datalist id="bs">
+                        <option value="2+">
+                        <option value="3+">
+                        <option value="4+">
+                        <option value="5+">
+                        <option value="6+">
+                    </datalist>
+            S: <input list="s" type="text" name="strength" /><br />
+                    <datalist id="s">
+                        <option value="2">
+                        <option value="3">
+                        <option value="4">
+                        <option value="5">
+                        <option value="6">
+                        <option value="7">
+                        <option value="8">
+                        <option value="9">
+                        <option value="10">
+                    </datalist>
+            T: <input list="t" type="text" name="toughness" /><br />
+                    <datalist id="t">
+                        <option value="2">
+                        <option value="3">
+                        <option value="4">
+                        <option value="5">
+                        <option value="6">
+                        <option value="7">
+                        <option value="8">
+                        <option value="9">
+                        <option value="10">
+                    </datalist>
+            W: <input list="w"type="text" name="wounds" /><br />
+                    <datalist id="W">
+                        <option value="2">
+                        <option value="3">
+                        <option value="4">
+                        <option value="5">
+                        <option value="6">
+                        <option value="7">
+                        <option value="8">
+                        <option value="9">
+                        <option value="10">
+                        <option value="11">
+                        <option value="12">
+                        <option value="13">
+                        <option value="14">
+                        <option value="15">
+                        <option value="16">
+                        <option value="17">
+                        <option value="18">
+                        <option value="19">
+                        <option value="20">
+                        <option value="21">
+                        <option value="22">
+                        <option value="23">
+                        <option value="24">
+                        <option value="25">
+                        <option value="26">
+                        <option value="27">
+                        <option value="28">
+                        <option value="29">
+                        <option value="30">
+                        <option value="31">
+                        <option value="32">
+                        <option value="33">
+                        <option value="34">
+                        <option value="35">
+                        <option value="36">
+                    </datalist>
+            A: <input list="a" type="text" name="attack" /><br />
+                    <datalist id="a">
+                        <option value="1">
+                        <option value="2">
+                        <option value="3">
+                        <option value="4">
+                        <option value="5">
+                        <option value="6">
+                        <option value="7">
+                        <option value="8">
+                        <option value="9">
+                        <option value="10">
+                    </datalist>
+            L: <input list="l"type="text" name="leadership" /><br />
+                    <datalist id="l">
+                        <option value="1">
+                        <option value="2">
+                        <option value="3">
+                        <option value="4">
+                        <option value="5">
+                        <option value="6">
+                        <option value="7">
+                        <option value="8">
+                        <option value="9">
+                        <option value="10">
+                    </datalist>
+            Save: <input list="save" type="text" name="saveCharacteristic" /><br />
+                    <datalist id="save">
+                        <option value="2+">
+                        <option value="3+">
+                        <option value="4+">
+                        <option value="5+">
+                        <option value="6+">
+                        <option value="7+">
+                    </datalist>
+            Unit Abilities: <input type="text" name="abilities" /><br />
             Unit Image(URL link): <input type="text" name="unitImage"/><br>
             Weapon name: <input type="text" name="weaponName" /><br />
             Range: <input type="text" name="range" /><br />
-            Type: <input type="text" name="type" /><br />
-            S: <input type="text" name="weaponStrength" /><br />
-            AP: <input type="text" name="ap" /><br />
+            Type (pistol,assault,heavy,or rapid fire): <input type="text" name="type" /><br />
+            S: <input list="weaponS" type="text" name="weaponStrength" /><br />
+                    <datalist id="weaponS">
+                        <option value="2">
+                        <option value="3">
+                        <option value="4">
+                        <option value="5">
+                        <option value="6">
+                        <option value="7">
+                        <option value="8">
+                        <option value="9">
+                        <option value="10">
+                    </datalist>
+            AP: <input list="ap"type="text" name="ap" /><br />
+                    <datalist id="ap">                      
+                        <option value="0">
+                        <option value="-1">
+                        <option value="-2">
+                        <option value="-3">
+                        <option value="-4">
+                        <option value="-5">
+                    </datalist>
             D: <input type="text" name="damage" /><br />
             Weapon Abilities: <input type="text" name="weaponAbilites" /><br />
             Weapon Image(URL link): <input type="text" name="weaponImage"/><br>
 			<input type="submit" name="" value="Submit Changes" />
             </fieldset>
+            <img src="https://th.bing.com/th/id/R.e34dbcbc7fedafec9d384aef305db1d7?rik=ZYJiAgNtEqHCuw&riu=http%3a%2f%2fvignette2.wikia.nocookie.net%2fwarhammer40k%2fimages%2f0%2f03%2fRetribution-wallpaper-05.jpg%2frevision%2flatest%3fcb%3d20141201095026&ehk=09uZXDUKE2Up%2bya3RICyUwV9FI2HKtBUjABVJkxoJo8%3d&risl=&pid=ImgRaw&r=0">
 		</form>
 	</body>
 	</body>
