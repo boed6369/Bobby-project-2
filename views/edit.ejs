@@ -4,21 +4,87 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Book List</title>
+		<title>Edit Unit</title>
         <style>
+            h1 {
+                text-align: center;
+                color: white;
+                background-color: black;
+                height: 50px;
+            }
+            legend {
+                text-align: center;
+                font-size: 30px;
+
+            }
             img {
                 max-width: 100%;
+                height: 100%;
             }
-            input {
-                margin: 10px 0
+            input[type=text]{
+                border: none;
+                border-bottom: 2px solid black;
+                width: 100%;
             }
+            .unit {
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 1;
+                grid-row-end:2;
+            }     
+            .top{
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 1;
+                grid-row-end:2; 
+            }  
+            .weapon {
+                grid-column-start: 2;
+                grid-column-end: 3;
+                grid-row-start: 2;
+                grid-row-end:3;
+            }
+            .bottom{
+                grid-column-start: 1;
+                grid-column-end: 2;
+                grid-row-start: 2;
+                grid-row-end:3;
+            }
+            .input {
+                grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row-start: 3;
+                grid-row-end:4;
+                width: 100%;
+                height: 150px;
+                border:0;
+                color:white;
+                background:darkgray;
+                transition: .5s ease-in;
+                border-radius: 10px;
+                font-size: 40px;
+            }
+            .input:hover {
+                background-color:black;
+            }
+            .container{
+                display: grid;
+            }
+            
         </style>
 	</head>
-	<body>
-		<h1>Unit Entry</h1>
-        <fieldset>
-            <form action="/unit/<%=unit._id%>?_method=PUT" method="POST">
-			Unit name: <input type="text" name="name" /><br />
+<body>
+    <h1>Edit Unit</h1>
+    <div class="container">
+            
+        
+        <img class="top"src="https://th.bing.com/th/id/R.731cc6666aafc9487e97edc9e26efb24?rik=m7hi%2blTY8nC4wg&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2fa%2fd%2fd%2f60026.jpg&ehk=D0dLdFlt7CVhWAdsHe0Ix7YGdJ%2f4o8QaouWOLIRwpww%3d&risl=&pid=ImgRaw&r=0">
+        <fieldset class="unit">
+            <legend>Unit</legend>
+            <form action="/unit/<%=unit._id%>?_method=PUT" method="POST">			
+                <label>Unit Name</label>
+            <input class="w3-input" type="text" name="name" /><br />
+
             Movement: <input type="text" name="movement" /><br />
             WS: <input list="ws" type="text" name="weaponSkill" /><br />
                     <datalist id="ws">
@@ -135,6 +201,9 @@
                     </datalist>
             Unit Abilities: <input type="text" name="abilities" /><br />
             Unit Image(URL link): <input type="text" name="unitImage"/><br>
+                </fieldset>
+                <fieldset class="weapon">
+                    <legend>Weapon</legend>
             Weapon name: <input type="text" name="weaponName" /><br />
             Range: <input type="text" name="range" /><br />
             Type (pistol,assault,heavy,or rapid fire): <input type="text" name="type" /><br />
@@ -162,10 +231,11 @@
             D: <input type="text" name="damage" /><br />
             Weapon Abilities: <input type="text" name="weaponAbilites" /><br />
             Weapon Image(URL link): <input type="text" name="weaponImage"/><br>
-			<input type="submit" name="" value="Submit Changes" />
+			
             </fieldset>
-            <img src="https://th.bing.com/th/id/R.e34dbcbc7fedafec9d384aef305db1d7?rik=ZYJiAgNtEqHCuw&riu=http%3a%2f%2fvignette2.wikia.nocookie.net%2fwarhammer40k%2fimages%2f0%2f03%2fRetribution-wallpaper-05.jpg%2frevision%2flatest%3fcb%3d20141201095026&ehk=09uZXDUKE2Up%2bya3RICyUwV9FI2HKtBUjABVJkxoJo8%3d&risl=&pid=ImgRaw&r=0">
+            <input class="input" type="submit" name="" value="Submit Your Changes" />
 		</form>
-	</body>
-	</body>
+        <img class="bottom" src="https://w.wallhaven.cc/full/2e/wallhaven-2e3976.jpg">
+    </div>
+</body>
 </html>
