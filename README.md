@@ -13,9 +13,9 @@ Allows the user to enter unit data for existing or new warhammer units
 * CSS Grid
 
 ## Pictures
-![Wireframe](https://imgur.com/.png)
+![Wireframe](https://imgur.com/ETtryKN.png)
 ---
-![Screen Shots](https://imgur.com/nL9PkH0.png)
+![Screen Shots](https://imgur.com/nL9PkH0.png)(https://imgur.com/cMPLGSl.png)(https://imgur.com/KiTnjZ6.png)(https://imgur.com/6kDyUQm.png)
 ---
 ## Get Started
 [Click here](https://tranquil-basin-19655.herokuapp.com/unit)
