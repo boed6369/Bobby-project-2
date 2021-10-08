@@ -79,7 +79,7 @@ module.exports = [{
     leadership: "9",
     saveCharacteristic: "6+",
     abilities: "Halo-suit: 4+ invulnerable save",
-    unitImage: "https://th.bing.com/th/id/OIP.n66dsDsN9iyzVjnbNtWU-gHaKE?w=152&h=207&c=7&r=0&o=5&pid=1.7",
+    unitImage: "https://th.bing.com/th/id/OIP.n66dsDsN9iyzVjnbNtWU-gHaKE?w=186&h=253&c=7&r=0&o=5&pid=1.7",
 
     weaponName: "Shrieker Cannon(Shrieker)",
     range: '24"',
@@ -88,6 +88,28 @@ module.exports = [{
     ap: "-1",
     damage: "1",
     weaponAbilites: "Each time you make a wound roll of 6+ for this weapon, that hit is resolved with an AP of -3. Each time an INFANTRY model is slain by an attack made with this weapon, its unit suffers D3 mortal wounds. If any models in a unit are slain by this weapon, subtract 2 from that unit's Leadership characteristic until the end of the turn.",
-    weaponImage: "https://th.bing.com/th/id/OIP.JsGKaJeNKQKTP4dHAmVL3gAAAA?w=242&h=87&c=7&r=0&o=5&pid=1.7" 
-},
+    weaponImage: "https://th.bing.com/th/id/OIP.JsGKaJeNKQKTP4dHAmVL3gAAAA?w=242&h=87&c=7&r=0&o=5&pid=1.7"
+}, {
+    name: "Sicarian Ruststalker",
+    movement: '8"',
+    weaponSkill: "3+",
+    ballisticSkill: "3+",
+    strength: "4",
+    toughness: "3",
+    wounds: "2",
+    attack: "3",
+    leadership: "6",
+    saveCharacteristic: "4+",
+    abilities: "Enhanced Bionics: 5+ invulnerable save | Optimised Gait: This unit can ignore any or all modifiers to its Move characteristic, with the exception of that incurred due to the Deprecation effect of the Bulwark Imperative. This unit can ignore any or all modifiers to its Advance rolls and charge rolls | Wasteland Stalkers: Each time a ranged attack is allocated to a model in this unit while it is receiving the benefits of cover, add an additional 1 to any armour saving throw made against that attack",
+    unitImage: "https://vignette.wikia.nocookie.net/warhammer40k/images/3/3c/Sicarian_Rustwalkers.png/revision/latest?cb=20160218000732",
+
+    weaponName: "Transonic Blades",
+    range: 'Melee',
+    type: "Melee",
+    weaponStrength: "+1",
+    ap: "-3",
+    damage: "1",
+    weaponAbilites: "Each time an attack is made with this weapon, an unmodified wound roll of 6 inflicts 1 mortal wound on the target in addition to any normal damage.",
+    weaponImage: "https://vignette.wikia.nocookie.net/warhammer40k/images/6/6a/Transonic_Blade.png/revision/latest?cb=20160303162403"
+}
 ]
